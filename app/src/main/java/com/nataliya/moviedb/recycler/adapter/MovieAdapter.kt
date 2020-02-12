@@ -62,11 +62,11 @@ class MovieAdapter(
         private val ivContent: ImageView = itemView.findViewById(R.id.ivPicture)
 
         fun bind(data: Movie) {
-            val date = "Release Date: ${data.getReleaseDate(data.releaseDate)}"
+            val date = "Release Date: ${data.getReleaseDate(data.releaseDate) ?: ""}"
             tvDate.text = date
 
             tvName.text = data.title
-            tvOverview.text = data.overview
+            tvOverview.text = data.overview ?: ""
             tvLanguage.text = data.originalLanguage
             tvRating.text = data.voteAverage.toString()
 

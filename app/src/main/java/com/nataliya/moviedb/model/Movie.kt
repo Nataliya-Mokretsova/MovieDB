@@ -26,13 +26,13 @@ data class Movie(
     val overview: String?,
 
     @SerializedName("release_date")
-    val releaseDate: String,
+    val releaseDate: String?,
 
     @SerializedName("poster_path")
-    var posterPath: String,
+    var posterPath: String?,
 
     @SerializedName("backdrop_path")
-    var backDropPath: String,
+    var backDropPath: String?,
 
     @SerializedName("vote_average")
     var voteAverage: Float,
@@ -42,22 +42,22 @@ data class Movie(
     var genres: ArrayList<MovieGenre>?
 ) {
 
-    fun getPosterPath(string: String): String {
-        return "https://image.tmdb.org/t/p/original$string"
+    fun getPosterPath(string: String?): String? {
+        return if (string != null) "https://image.tmdb.org/t/p/original$string" else null
     }
 
-    fun getBackDropPath(string: String): String {
-        return "https://image.tmdb.org/t/p/original$string"
+    fun getBackDropPath(string: String?): String? {
+        return if (string != null) "https://image.tmdb.org/t/p/original$string" else null
     }
 
-    fun getReleaseDate(string: String): String {
+    fun getReleaseDate(string: String?): String? {
         val format = SimpleDateFormat(
             "yyyy-MM-dd",
 //            Locale.getDefault()
             Locale.US
         )
         try {
-            val date = format.parse(string)
+            val date = format.parse(string!!)
             val formatS = SimpleDateFormat(
                 "dd MMM yyyy",
 //            Locale.getDefault()
@@ -67,7 +67,7 @@ data class Movie(
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        return string
+        return null
     }
 }
 

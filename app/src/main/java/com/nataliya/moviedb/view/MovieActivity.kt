@@ -95,11 +95,11 @@ class MovieActivity : AppCompatActivity() {
 
         tvName.text = data.title
 
-        val date = "Release Date: ${data.getReleaseDate(data.releaseDate)}"
+        val date = "Release Date: ${data.getReleaseDate(data.releaseDate) ?: ""}"
         tvReleaseDate.text = date
 
         tvName.text = data.title
-        tvOverview.text = data.overview
+        tvOverview.text = data.overview ?: ""
         tvRating.text = data.voteAverage.toString()
 
         val stars = if (data.voteAverage != 0.0f) 0.5f * (1 + data.voteAverage) else 0f

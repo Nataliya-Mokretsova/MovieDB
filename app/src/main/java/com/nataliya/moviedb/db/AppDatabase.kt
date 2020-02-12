@@ -8,7 +8,7 @@ import com.nataliya.moviedb.model.MovieGenre
 
 @Database(
     entities = [Movie::class, MovieGenre::class],
-    version = 7,
+    version = 8,
     exportSchema = false
 )
 @TypeConverters(MovieGenreConverter::class)
