@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Movies</string>
+
+    <string name="movies_title">Popular Movies</string>
+    <string name="favorite_movies_title">Favorite Movies</string>
+
+    <string name="check_internet">Please check your Internet connection</string>
+    <string name="check_internet_movie">Please check your Internet connection, no local information</string>
+    <string name="update">Update</string>
+
+    <string name="please_add_favorite">No one favorite movies</string>
+</resources>
